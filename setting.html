@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Princess Care</title>
+    <style>
+         :root {
+            --primary-color: #ff69b4;
+            --secondary-color: #f8b3d2;
+            --text-color: #333;
+            --background-color: #fff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PT Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: horizontal;
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-left: 20px;
+            font-size:30px;
+        }
+
+        .active{
+            color:#ff69b4;
+        }
+        nav ul li a {
+            color: gray;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav .search-bar {
+            margin-top: 10px;
+        }
+
+        .search-bar input {
+            width: 500px; 
+  height: 52px; 
+  padding-left: 52px; 
+  padding-right: 20px; 
+  font-size: 18px; 
+  line-height: 28px; 
+  font-weight: 400; 
+  background: #F3F4F6FF; /* neutral-200 */
+  border-radius: 8px; /* border-xl */
+  border-width: 0px; 
+  outline: none; 
+        }
+
+
+        main {
+            display: flex;
+            margin: 20px;
+        }
+
+        .settings-menu {
+            width: 300px;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+
+        .settings-menu ul {
+            list-style: none;
+        }
+
+        .settings-menu ul li {
+            margin-bottom: 15px;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 18px;
+            background-color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .settings-menu ul li:hover,
+        .settings-menu ul li.active {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .settings-section {
+            flex: 1;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .update-photo, .update-information {
+            margin-bottom: 20px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        form button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #e057a1;
+        }
+
+        .notification-options li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .arrow-icon {
+            width: 25px;
+            height: 25px;
+        }
+
+        .info-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head> 
+
+<body>
+    <header>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="menstrual-health.html">Learn</a></li>
+            <li><a href="track-period.html">Track My Period</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="setting.html" class="active">Settings</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="settings-menu">
+            <ul>
+                <li onclick="showSection('account-settings')" class="active">Account Settings</li>
+                <li onclick="showSection('notifications')">Notifications</li>
+                <li onclick="showSection('accessibility')">Accessibility, Display, & Language</li>
+                <li onclick="showSection('password-security')">Password & Security</li>
+            </ul>
+        </div>
+        
+        <div class="settings-section" id="account-settings">
+            <h2>Account Settings</h2>
+            <div class="update-photo">
+                <label for="upload-photo">Upload a New Photo</label>
+                <input type="file" id="upload-photo">
+                <button>Update</button>
+            </div>
+            <div class="update-information">
+                <form>
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name">
+                    <label for="email-address">Email Address</label>
+                    <input type="email" id="email-address">
+                    <label for="address">Address</label>
+                    <input type="text" id="address">
+                    <label for="city">City</label>
+                    <input type="text" id="city">
+                    <label for="state">State/Province</label>
+                    <input type="text" id="state">
+                    <label for="country">Country</label>
+                    <input type="text" id="country">
+                    <button type="submit">Update Information</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="settings-section" id="notifications" style="display:none">
+            <h2>Notifications</h2>
+            <ul class="notification-options">
+                <li>
+                    <div>
+                        <h4>Filters</h4>
+                        <p>Choose the notifications you'd like to see - and those you don't</p>
+                    </div>
+                    <img src="src/images/Settings arrow.png" alt="Arrow Icon" class="arrow-icon">
+                </li>
+                <li>
+                    <div>
+                        <h4>Preferences</h4>
+                        <p>Select your preferences by notification type</p>
+                    </div>
+                    <img src="src/images/Settings arrow.png" alt="Arrow Icon" class="arrow-icon">
+                </li>
+            </ul>
+        </div>
+
+        <div class="settings-section" id="accessibility" style="display:none">
+            <h2>Accessibility, Display, & Language</h2>
+            <ul class="notification-options">
+                <li>
+                    <div>
+                        <h4>Accessibility</h4>
+                        <p>Manage aspects of your experience such as limiting colour contrast, motion and text-to-voice options</p>
+                    </div>
+                    <img src="src/images/Settings arrow.png" alt="Arrow Icon" class="arrow-icon">
+                </li>
+                <li>
+                    <div>
+                        <h4>Display</h4>
+                        <p>Manage your font size, colour, and background</p>
+                    </div>
+                    <img src="src/images/Settings arrow.png" alt="Arrow Icon" class="arrow-icon">
+                </li>
+                <li>
+                    <div>
+                        <h4>Languages</h4>
+                        <p>Manage which

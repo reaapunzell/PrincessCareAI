@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menstrual Health Tracker</title>
+    <style>
+         :root {
+            --primary-color: #ff69b4;
+            --secondary-color: #f8b3d2;
+            --text-color: #333;
+            --background-color: #fff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PT Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+       
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: horizontal;
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-left: 20px;
+            font-size:30px;
+        }
+
+        .active{
+            color:#ff69b4;
+        }
+        nav ul li a {
+            color: gray;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav .search-bar {
+            margin-top: 10px;
+        }
+
+        .search-bar input {
+            width: 500px; 
+  height: 52px; 
+  padding-left: 52px; 
+  padding-right: 20px; 
+  font-size: 18px; 
+  line-height: 28px; 
+  font-weight: 400; 
+  background: #F3F4F6FF; /* neutral-200 */
+  border-radius: 8px; /* border-xl */
+  border-width: 0px; 
+  outline: none; 
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        section {
+            width:800px;
+            margin-bottom: 2rem;
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size:40px;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            font-size:25px;
+        }
+
+        label {
+            margin-bottom: 0.5rem;
+        }
+
+        input, select {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size:18px;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff4d94;
+        }
+
+        #prediction {
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+            }
+
+            section {
+                flex-basis: 100%;
+            }
+        }
+
+        #gyno-connect {
+            background-color: #e6f2ff;
+        }
+
+        #gyno-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #gyno-list li {
+            font-size:24px;
+            height:150px;
+            background-color: #fff;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #gyno-list button {
+            font-size:24px;
+            background-color:#ff69b4;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            float: right;
+        }
+
+        #gyno-list button:hover {
+            background-color:#ff4d94;
+        }
+
+        .lean-title{
+            text-align: center;
+            margin-top:20px;
+            color:#ff69b4;
+        }
+
+    
+        
+    </style>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menstrual Health Tracker & Gyno Connect</title>
+   
+</head>
+<body>
+    <header>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    
+                </header>
+                <nav>
+                    <ul>
+                        <li><a href="index.html" >Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="menstrual-health.html" >Learn</a></li>
+                        <li><a href="track-period.html" class="active">Track My Period</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="setting.html" class="btn">Settings</a></li>
+                    </ul>
+                </nav>
+        <h1 class="lean-title">Menstrual Health Tracker & Gynecologist Connect</h1>
+    </header>
+    <div class="container">
+        <main>
+            <section id="track-period">
+                <h2>Track Your Period</h2>
+                <form id="period-form">
+                    <label for="start-date">Start Date:</label>
+                    <input type="date" id="start-date" required>
+                    <label for="end-date">End Date:</label>
+                    <input type="date" id="end-date">
+                    <button type="submit">Save</button>
+                </form>
+            </section>
+            <section id="symptoms">
+                <h2>Track Symptoms</h2>
+                <form id="symptom-form" >
+                    <label for="symptom-date">Date:</label>
+                    <input type="date" id="symptom-date" required>
+                    <label for="symptom-type">Symptom:</label>
+                    <select id="symptom-type" required>
+                        <option value="">Select a symptom</option>
+                        <option value="cramps">Cramps</option>
+                        <option value="headache">Headache</option>
+                        <option value="bloating">Bloating</option>
+                        <option value="fatigue">Fatigue</option>
+                        <option value="mood-swings">Mood Swings</option>
+                    </select>
+                    <label for="symptom-severity">Severity (1-10):</label>
+                    <input type="number" id="symptom-severity" min="1" max="10" required>
+                    <button type="submit">Save Symptom</button>
+                </form>
+            </section>
+            <section id="predict">
+                <h2>Predict Next Period</h2>
+                <form id="predict-form">
+                    <label for="last-period">Last Period Start Date:</label>
+                    <input type="date" id="last-period" required>
+                    <label for="cycle-length">Average Cycle Length (days):</label>
+                    <input type="number" id="cycle-length" min="21" max="35" value="28" required>
+                    <button type="submit">Predict</button>
+                </form>
+                <p id="prediction"></p>
+            </section>
+            <section id="gyno-connect">
+                <h2>Connect with a Gynecologist</h2>
+                <p>Find a gynecologist near you or schedule a virtual consultation:</p>
+                <ul id="gyno-list">
+                    <!-- Gynecologists will be dynamically added here -->
+                </ul>
+            </section>
+        </main>
+    </div>
+    <script>
+        // Function to save period data
+        function savePeriodData(startDate, endDate) {
+            let periodData = JSON.parse(localStorage.getItem('periodData')) || [];
+            periodData.push({ startDate, endDate });
+            localStorage.setItem('periodData', JSON.stringify(periodData));
+        }
+
+        // Function to save symptom data
+        function saveSymptomData(date, symptom, severity) {
+            let symptomData = JSON.parse(localStorage.getItem('symptomData')) || [];
+            symptomData.push({ date, symptom, severity });
+            localStorage.setItem('symptomData', JSON.stringify(symptomData));
+        }
+
+        // Function to predict next period
+        function predictNextPeriod(lastPeriod, cycleLength) {
+            const nextPeriod = new Date(lastPeriod);
+            nextPeriod.setDate(nextPeriod.getDate() + parseInt(cycleLength));
+            return nextPeriod;
+        }
+
+        // Event listener for period form submission
+        document.getElementById('period-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const startDate = document.getElementById('start-date').value;
+            const endDate = document.getElementById('end-date').value;
+            savePeriodData(startDate, endDate);
+            alert('Period data saved successfully!');
+        });
+
+        // Event listener for symptom form submission
+        document.getElementById('symptom-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const date = document.getElementById('symptom-date').value;
+            const symptom = document.getElementById('symptom-type').value;
+            const severity = document.getElementById('symptom-severity').value;
+            saveSymptomData(date, symptom, severity);
+            alert('Symptom data saved successfully!');
+        });
+
+        // Event listener for predict form submission
+        document.getElementById('predict-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const lastPeriod = new Date(document.getElementById('last-period').value);
+            const cycleLength = document.getElementById('cycle-length').value;
+            const nextPeriod = predictNextPeriod(lastPeriod, cycleLength);
+            document.getElementById('prediction').textContent = `Your next period is predicted to start on ${nextPeriod.toDateString()}.`;
+        });
+
+        // Sample gynecologists data (in a real application, this would come from a backend API)
+        const gynecologists = [
+            { name: "Dr. Rea Maroga", specialty: "General Gynecology", location: "Johannesburg, JBG" },
+            { name: "Dr. Tsholofelo Sekome", specialty: "Reproductive Endocrinology", location: "Pretoria, PTA" },
+            { name: "Dr. Kagiso Patel", specialty: "Adolescent Gynecology", location: "Nelspruit, NST" }
+        ];
+
+        // Function to display gynecologists
+        function displayGynecologists() {
+            const gynoList = document.getElementById('gyno-list');
+            gynecologists.forEach(gyno => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <strong>${gyno.name}</strong><br>
+                    ${gyno.specialty}<br>
+                    ${gyno.location}
+                    <button onclick="scheduleAppointment('${gyno.name}')">Schedule Appointment</button>
+                `;
+                gynoList.appendChild(li);
+            });
+        }
+
+        // Function to schedule appointment (placeholder)
+        function scheduleAppointment(gynoName) {
+            alert(`Appointment request sent to ${gynoName}. They will contact you soon to confirm.`);
+        }
+
+        // Call displayGynecologists when the page loads
+        window.onload = displayGynecologists;
+    </script>
+</body>
+</html>

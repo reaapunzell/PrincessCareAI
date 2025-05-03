@@ -1,0 +1,367 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Princess Care</title>
+    <style>
+        :root {
+            --primary-color: #ff69b4;
+            --secondary-color: #f8b3d2;
+            --text-color: #333;
+            --background-color: #fff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PT Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: horizontal;
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-left: 20px;
+            font-size:30px;
+        }
+
+        .active{
+            color:#ff69b4;
+        }
+        nav ul li a {
+            color: gray;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav .search-bar {
+            margin-top: 10px;
+        }
+
+        .search-bar input {
+            width: 500px; 
+  height: 52px; 
+  padding-left: 52px; 
+  padding-right: 20px; 
+  font-family: Inter; 
+  font-size: 18px; 
+  line-height: 28px; 
+  font-weight: 400; 
+  background: #F3F4F6FF; /* neutral-200 */
+  border-radius: 8px; /* border-xl */
+  border-width: 0px; 
+  outline: none; 
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        h2{
+            text-align: center;
+            font-size:50px;
+            margin: 30px;
+        }
+
+        h3{
+            font-size:35px;
+            text-align: center;
+        }
+        p{
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .horizontal-sections {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+        }
+
+        .section {
+            flex: 1;
+            min-width: 200px;
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+
+        h1{
+            font-size:40px;
+        }
+
+        .slogan{
+            font-size: 38px;
+            font-family: Alex Brush;
+            color:#E21E80;
+
+        }
+
+        .hero-content {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            font-size: 30px;
+           
+        }
+
+        .container-princess-hamper{
+            margin-top:30px;
+            box-shadow: 0px 0px 1px #a8a8a8, 0px 0px 2px #808080; 
+            width: 713px; 
+            height: 502px; 
+            
+        }
+
+        .container-princess-hamper p {
+            font-size: 20px;
+        }
+
+        .container-princess-hamper h3{
+            font-size: 40px;
+        }
+
+        .princess-hamper-info{
+            display:flex;
+            justify-content: space-between;
+        }
+        .princess-hamper-info img{
+            width: 340px; 
+            height: 375px; 
+        }
+
+            button{
+           height: 36px;
+           padding: 0 12px;
+           font-size:14px;
+           background:#FF69B4FF;
+           color: white;
+           border: none;
+           border-radius: 4px;
+           margin-bottom: 10px;
+           margin-left: 10px;
+           margin-top: 10px;
+        }
+
+        .product-card{
+            margin-left: 10px;
+            width: 191px; 
+            height: 280px; 
+            background: #FFFFFFFF; /* white */
+            border-radius: 4px;
+            border-color: gray;
+            box-shadow: 0px 0px 1px #a8a8a8, 0px 0px 2px #808080; 
+        }
+
+    .product-image{
+        width: 150px; 
+        height: 146px; 
+    }
+
+    .our-products{
+        display:flex;
+    }
+
+    .see-more{
+        background-color: white;
+        color: #FF69B4FF;
+    }
+        .cta-buttons {
+            margin-top: 1rem;
+        }
+
+        .cta-buttons .btn {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            margin: 0 5px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-buttons .btn:hover {
+            background-color: #d95787;
+        }
+
+        .testimonial, .news-item, .interactive-item {
+            margin-bottom: 20px;
+        }
+
+        .team-bios{
+            display:flex;
+            justify-content: space-evenly;
+            margin-top:50px;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        .footer-section {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+
+        footer form input[type="email"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        footer form button {
+            padding: 10px 20px;
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        footer form button:hover {
+            background-color: #f8b3d2;
+        }
+
+        #interactive {
+            padding-bottom: 300px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <header>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+        
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html" >Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="menstrual-health.html" >Learn</a></li>
+            <li><a href="track-period.html" >Track My Period</a></li>
+            <li><a href="donate.html">Support Her Initiative</a></li>
+            <li><a href="setting.html" class="btn">Settings</a></li>
+        </ul>
+    </nav>
+
+    <section id="about-us">
+        <h2>About Us</h2>
+        <p>PrincessCare is dedicated to improving menstrual health awareness and providing accessible care.</p>
+
+        <h3>Mission Statement</h3>
+        <p>At Princess Care, our mission is to empower women and girls by ensuring access to essential menstrual hygiene products. Through every purchase made on our platform, we are committed to supporting those in need and making a positive impact in our communities.</p>
+
+        <h3>The Problem</h3>
+        <p>Menstrual hygiene is a fundamental aspect of health and dignity, yet many women and young girls face challenges accessing affordable and safe sanitary products. The stigma and lack of resources can lead to missed school days, decreased productivity, and overall discomfort, impacting their quality of life and opportunities.</p>
+
+        <h3>Our Solution</h3>
+        <p>Princess Care is dedicated to addressing this issue through a unique approach. For every sanitary product purchased on our website, a portion of the proceeds goes towards creating a "princess hamper." These hampers are filled with high-quality sanitary products and are distributed to women and young girls in underserved communities.
+
+            By choosing Princess Care, you are not only investing in your own menstrual health but also contributing to a larger cause. Together, we can ensure that every woman and girl has access to the products they need to manage their menstrual health with confidence and dignity.
+            
+            Thank you for being a part of our mission. Your support helps us make a difference, one hamper at a time.</p>
+        <div class="team-bios">
+            <div class="member-bio">
+                <img src="src/images/Rea Image.png" alt="Reatlilwe Maroga">
+                <h3>Reatlilwe Maroga</h3>
+                <p>Project Manager</p>
+            </div>
+            <div class="member-bio">
+                <img src="src/images/Tsholofelo Image.png" alt="Tsholofelo Sekome">
+                <h3>Tsholofelo Sekome</h3>
+                <p>Developer</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@princesscare.co.za</p>
+                <p>Phone: +o11 456 7890</p>
+                <p>Address: 123 Wellness Street, Health City</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter Signup</h3>
+                <form>
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

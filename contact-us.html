@@ -1,0 +1,235 @@
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Font styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+  <title>Menstrual Health and Hygiene</title>
+
+  <!-- Integrated CSS -->
+  <style>
+    :root {
+        --primary-color: #E75480; /* A soft pink/red color */
+        --secondary-color: #FFD1DC; /* Light pink for background */
+        --text-color: #333; /* Dark grey for text */
+        --background-color: #fff; /* White for form background */
+        --button-hover-color: #FF69B4; /* Brighter pink for hover */
+    }
+
+    header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: horizontal;
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav .search-bar {
+            margin-top: 10px;
+        }
+
+        nav .search-bar input {
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .horizontal-sections {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+        }
+
+
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Lato', Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--secondary-color);
+        padding: 20px;
+    }
+
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .login-box {
+        background-color: var(--background-color);
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+    }
+
+    header {
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        color: var(--primary-color);
+        margin-bottom: 20px;
+    }
+
+    .input-field {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        background-color: var(--primary-color);
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+        background-color: var(--button-hover-color);
+    }
+
+    .additional-links {
+        margin-top: 20px;
+    }
+
+    .additional-links a {
+        display: block;
+        color: var(--primary-color);
+        text-decoration: none;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .additional-links a:hover {
+        text-decoration: underline;
+    }
+
+    .social-media-login {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .social-media-login img {
+        width: 40px;
+        height: 40px;
+    }
+  </style>
+</head>
+<body>
+   <!-- Navigation -->
+   <header>
+    <nav>
+        <h1>Menstrual Health Hub</h1>
+        <ul>
+            <!-- <li><a href="#index.html">Home</a></li> -->
+            <li><a href="index.html">Home</a></li>
+            <li><a href="contact-us.html">Contact</a></li>
+            <li><a href="learnPeriods.html" class="btn">Learn More</a></lili>
+            <!-- <li><a href="donate.html">Support Her Initiative</a></li> -->
+            <li><a href="contact-us.html" class="btn">Contact Us</a></li>
+            <li><a href="about-us.html" class="btn">About Us</a></li>
+            </li><a href="setting.html" class="btn">Settings</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+    </nav>
+</header>
+<div class="login-container">
+    <div class="login-box">
+        <header>Menstrual Health & Hygiene</header>
+       
+        <h2>Welcome Back</h2>
+        <form action="/action_page.php">
+            <div class="input-field">
+                <label for="username">Email or Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your email or username" required>
+            </div>
+
+            <div class="input-field">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            
+            <input type="submit" value="Login">
+            
+            <div class="additional-links">
+                <a href="reset.html">Forgot your password? Reset it here</a>
+                <a href="sign-up.html">No Account? Sign-up for free!</a>
+                <a href="continue-with-phone.html">Continue with phone number</a>
+            </div>
+            
+            <div class="social-media-login">
+                <a href="continue-with-google.html"><img src="src/images/Google Icon.png" alt="Login with Google"></a>
+                <a href="continue-with-facebook.html"><img src="src/images/Facebook Icon.png" alt="Login with Facebook"></a>
+            </div>
+        </form>
+    </div>
+</div>
+  
+</body>
+</html>  -->

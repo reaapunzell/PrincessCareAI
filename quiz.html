@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menstrual Health Education</title>
+    <style>
+        :root {
+            --primary-color: #FF69B4;
+            --secondary-color: #FFC0CB;
+            --accent-color: #8A2BE2;
+            --bg-color: #FFF0F5;
+            --text-color: #333;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        :root {
+            --primary-color: #ff69b4;
+            --secondary-color: #f8b3d2;
+            --text-color: #333;
+            --background-color: #fff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PT Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: horizontal;
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-left: 20px;
+            font-size:30px;
+        }
+
+        .active{
+            color:#ff69b4;
+        }
+        nav ul li a {
+            color: gray;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav .search-bar {
+            margin-top: 10px;
+        }
+
+        .search-bar input {
+            width: 500px; 
+            height: 52px; 
+            padding-left: 52px; 
+            padding-right: 20px; 
+            font-size: 18px; 
+            line-height: 28px; 
+            font-weight: 400; 
+            background: #F3F4F6FF; /* neutral-200 */
+            border-radius: 8px; /* border-xl */
+            border-width: 0px; 
+            outline: none; 
+        }
+
+        p{
+            font-size:24px;
+        }
+
+        li{
+            font-size:20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .horizontal-sections {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+        }
+
+        h1, h2, h3 {
+            color: var(--accent-color);
+            font-size:40px;
+        }
+        .content-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 1000px;
+        }
+        .quiz-section {
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: var(--primary-color);
+        }
+        .quiz-question {
+            margin-bottom: 20px;
+        }
+        .quiz-options label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        #quiz-result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="menstrual-health.html" >Learn</a></li>
+            <li><a href="track-period.html">Track My Period</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="setting.html" class="btn">Settings</a></li>
+        </ul>
+    </nav>
+    </header>
+    <div class="container">
+        <div class="content-section">
+            <h2>Understanding Menstrual Health</h2>
+            <p>Menstrual health is a crucial aspect of overall well-being for individuals who menstruate. It encompasses not just the physical process of menstruation, but also the broader context of health, well-being, gender equality, and reproductive rights.</p>
+            <p>Key aspects of menstrual health include:</p>
+            <ul>
+                <li>Understanding the menstrual cycle and its phases</li>
+                <li>Proper hygiene practices during menstruation</li>
+                <li>Access to safe and affordable menstrual products</li>
+                <li>Managing menstrual symptoms and disorders</li>
+                <li>Breaking taboos and stigma surrounding menstruation</li>
+            </ul>
+        </div>
+   
+        <div class="content-section">
+            <h2>The Menstrual Cycle Explained</h2>
+            <p>The menstrual cycle is a complex interplay of hormones that typically occurs every 21 to 35 days. It consists of four main phases:</p>
+            <ol>
+                <li><strong>Menstrual Phase:</strong> The shedding of the uterine lining, resulting in menstrual flow.</li>
+                <li><strong>Follicular Phase:</strong> The ovaries prepare to release an egg.</li>
+                <li><strong>Ovulation:</strong> The release of a mature egg from the ovary.</li>
+                <li><strong>Luteal Phase:</strong> The body prepares for possible pregnancy or the next menstrual cycle.</li>
+            </ol>
+            <p>Understanding these phases can help individuals better manage their health, track fertility, and recognize any irregularities.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Menstrual Hygiene Management</h2>
+            <p>Proper menstrual hygiene is essential for health and comfort. Here are some key practices:</p>
+            <ul>
+                <li>Change menstrual products regularly (every 4-8 hours for tampons and pads)</li>
+                <li>Wash hands before and after changing menstrual products</li>
+                <li>Use clean, breathable underwear</li>
+                <li>Clean the genital area with water during menstruation</li>
+                <li>Dispose of used menstrual products properly</li>
+            </ul>
+            <p>Remember, everyone's needs are different, so it's important to find what works best for you.</p>
+        </div>
+
+        <div class="quiz-section">
+            <h2>Engage with Us: Take our Menstrual Health Quiz</h2>
+            <p>Test your knowledge about menstrual health and learn more! This quiz covers various aspects of menstrual health, from basic biology to hygiene practices and common myths.</p>
+            <button onclick="startQuiz()">Start Quiz</button>
+            <div id="quiz-container" style="display:none;">
+                <div id="quiz-question" class="quiz-question"></div>
+                <div id="quiz-options" class="quiz-options"></div>
+                <button onclick="submitAnswer()">Submit Answer</button>
+                <div id="quiz-result"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const quizQuestions = [
+            {
+                question: "How long does a typical menstrual cycle last?",
+                options: ["14-20 days", "21-35 days", "36-50 days", "51-65 days"],
+                correctAnswer: 1
+            },
+            {
+                question: "Which of these is NOT a phase of the menstrual cycle?",
+                options: ["Follicular phase", "Ovulation phase", "Digestion phase", "Luteal phase"],
+                correctAnswer: 2
+            },
+            {
+                question: "Which hormone triggers ovulation?",
+                options: ["Estrogen", "Follicle Stimulating Hormone (FSH)", "Luteinizing Hormone (LH)", "Progesterone"],
+                correctAnswer: 2
+            },
+            {
+                question: "Which of these is NOT a common menstrual disorder?",
+                options: ["Polycystic Ovary Syndrome (PCOS)", "Endometriosis", "Dysmenorrhea", "Hypothyroidism"],
+                correctAnswer: 3
+            },
+            {
+                question: "How often should you change a tampon?",
+                options: ["Every 2-3 hours", "Every 4-8 hours", "Every 10-12 hours", "Once a day"],
+                correctAnswer: 1
+            },
+            {
+                question: "Which of these foods can help alleviate menstrual symptoms?",
+                options: ["Sugary snacks", "Caffeinated beverages", "Iron-rich foods", "High-sodium foods"],
+                correctAnswer: 2
+            },
+            {
+                question: "What is a benefit of exercising during menstruation?",
+                options: ["Increases cramps", "Reduces bloating", "Worsens mood swings", "Disrupts sleep patterns"],
+                correctAnswer: 1
+            },
+            {
+                question: "Which of these is NOT a common emotional experience during menstruation?",
+                options: ["Mood swings", "Irritability", "Euphoria", "Anxiety"],
+                correctAnswer: 2
+            },
+            {
+                question: "What is menarche?",
+                options: ["The end of menstruation", "The first day of a period", "The first menstruation", "The heaviest day of flow"],
+                correctAnswer: 2
+            },
+            {
+                question: "Which of these is a way to break taboos around menstruation?",
+                options: ["Avoiding the topic", "Using euphemisms", "Menstrual health education in schools", "Restricting activities during menstruation"],
+                correctAnswer: 2
+            },
+            {
+                question: "What is the primary function of estrogen during the menstrual cycle?",
+                options: ["Triggering ovulation", "Preparing the uterus for pregnancy", "Stimulating follicle growth", "Regulating body temperature"],
+                correctAnswer: 2
+            },
+            {
+                question: "Which menstrual disorder is characterized by severe menstrual cramps and pain?",
+                options: ["Amenorrhea", "Dysmenorrhea", "Menorrhagia", "Oligomenorrhea"],
+                correctAnswer: 1
+            },
+            {
+                question: "How long can a menstrual cup be worn before it needs to be emptied?",
+                options: ["Up to 4 hours", "Up to 8 hours", "Up to 12 hours", "Up to 24 hours"],
+                correctAnswer: 2
+            },
+            {
+                question: "Which nutrient is important to replenish during menstruation due to blood loss?",
+                options: ["Vitamin C", "Calcium", "Iron", "Vitamin D"],
+                correctAnswer: 2
+            },
+            {
+                question: "What is a common symptom of Premenstrual Syndrome (PMS)?",
+                options: ["Increased energy", "Improved concentration", "Mood swings", "Decreased appetite"],
+                correctAnswer: 2
+            },
+            {
+                question: "Which of these is NOT a recommended coping strategy for menstrual-related emotional changes?",
+                options: ["Regular exercise", "Isolation from others", "Balanced diet", "Relaxation techniques"],
+                correctAnswer: 1
+            },
+            {
+                question: "What is period poverty?",
+                options: ["Having very light periods", "Lack of access to menstrual products", "Experiencing severe cramps", "Having irregular periods"],
+                correctAnswer: 1
+            },
+            {
+                question: "Which of these is a reusable menstrual product?",
+                options: ["Disposable pads", "Tampons", "Menstrual cups", "Panty liners"],
+                correctAnswer: 2
+            },
+            {
+                question: "What is the typical length of the luteal phase in the menstrual cycle?",
+                options: ["7-10 days", "10-14 days", "14-16 days", "16-20 days"],
+                correctAnswer: 1
+            },
+            {
+                question: "Which of these is NOT a common physical symptom during menstruation?",
+                options: ["Cramps", "Bloating", "Fatigue", "Increased muscle mass"],
+                correctAnswer: 3
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function startQuiz() {
+            document.getElementById('quiz-container').style.display = 'block';
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            const questionEl = document.getElementById('quiz-question');
+            const optionsEl = document.getElementById('quiz-options');
+            const currentQ = quizQuestions[currentQuestion];
+
+            questionEl.textContent = `Question ${currentQuestion + 1} of ${quizQuestions.length}: ${currentQ.question}`;
+            optionsEl.innerHTML = '';
+
+            currentQ.options.forEach((option, index) => {
+                optionsEl.innerHTML += `
+                    <label>
+                        <input type="radio" name="quiz" value="${index}">
+                        ${option}
+                    </label>
+                `;
+            });
+
+            document.getElementById('quiz-result').textContent = '';
+        }
+
+        function submitAnswer() {
+            const selectedOption = document.querySelector('input[name="quiz"]:checked');
+            if (!selectedOption) {
+                alert('Please select an answer!');
+                return;
+            }
+
+            const answer = parseInt(selectedOption.value);
+            if (answer === quizQuestions[currentQuestion].correctAnswer) {
+                score++;
+                document.getElementById('quiz-result').textContent = 'Correct!';
+            } else {
+                document.getElementById('quiz-result').textContent = 'Incorrect. The correct answer was: ' + quizQuestions[currentQuestion].options[quizQuestions[currentQuestion].correctAnswer];
+            }
+
+            currentQuestion++;
+            if (currentQuestion < quizQuestions.length) {
+                setTimeout(loadQuestion, 2000);
+            } else {
+                setTimeout(showFinalResult, 2000);
+            }
+        }
+
+        function showFinalResult() {
+            const quizContainer = document.getElementById('quiz-container');
+            quizContainer.innerHTML = `
+                <h2>Quiz Completed!</h2>
+                <p>Your score: ${score} out of ${quizQuestions.length}</p>
+                <p>Great job on completing the quiz! Remember, learning about menstrual health is an ongoing process. Keep exploring, asking questions, and taking care of your health!</p>
+                <button onclick="location.reload()">Retake Quiz</button>
+            `;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Princess Care - Your Cycle</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- FullCalendar CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #ff69b4;
+            --secondary-color: #f8b3d2;
+            --text-color: #333;
+            --background-color: #fff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PT Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .search-bar input {
+            width: 300px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        nav {
+            background-color: #f3f4f6;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: inline-flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--primary-color);
+        }
+
+        #calendar-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        #calendar {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        .footer-section {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+
+        footer form input[type="email"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            width: 250px;
+        }
+
+        footer form button {
+            padding: 10px 20px;
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        footer form button:hover {
+            background-color: #f8b3d2;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Products</a></li>
+            <li><a href="your-cycle.html" class="active">Your Cycle</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="setting.html">Settings</a></li>
+        </ul>
+    </nav>
+
+    <!-- Calendar Container -->
+    <div id="calendar-container">
+        <h1>Your Cycle Calendar</h1>
+        <div id="calendar"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>Email: support@princesscare.co.za</p>
+            <p>Phone: +011 456 7890</p>
+            <p>Address: 123 Wellness Street, Health City</p>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <a href="#">Facebook</a>|<a href="#">Twitter</a>|<a href="#">Instagram</a>
+        </div>
+        <div class="footer-section">
+            <h3>Newsletter Signup</h3>
+            <form>
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </footer>
+
+    <!-- FullCalendar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+
+            // Fetch events from localStorage or use test data if empty
+            function fetchPeriodEvents() {
+                let events = JSON.parse(localStorage.getItem('periodEvents')) || [];
+                if (events.length === 0) {
+                    events = [
+                        {
+                            title: 'Period Start',
+                            start: '2024-08-01',
+                            color: 'red',
+                        },
+                        {
+                            title: 'Period End',
+                            start: '2024-08-05',
+                            color: 'red',
+                        },
+                        {
+                            title: 'Period Start',
+                            start: '2024-08-29',
+                            color: 'red',
+                        }
+                    ];
+                }
+                return events;
+            }
+
+            // Initialize FullCalendar
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                selectable: true,
+                editable: true,
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,dayGridWeek,dayGridDay'
+                },
+                events: fetchPeriodEvents(),
+                dateClick: function(info) {
+                    addPeriodEvent(info.dateStr);
+                },
+                eventClick: function(info) {
+                    editPeriodEvent(info.event);
+                }
+            });
+
+            calendar.render();
+
+            // Add new period event
+            function addPeriodEvent(dateStr) {
+                let eventName = prompt("Enter event name (e.g., Period Start):");
+                if (eventName) {
+                    const event = {
+                        id: Date.now().toString(),
+                        title: eventName,
+                        start: dateStr,
+                        allDay: true,
+                        color: eventName.toLowerCase().includes('period') ? '#e21e80' : '#ff9f89'
+                    };
+                    calendar.addEvent(event);
+                    savePeriodEvent(event);
+                    alert('Event added successfully!');
+                }
+            }
+
+            // Save event to localStorage
+            function savePeriodEvent(event) {
+                let events = fetchPeriodEvents();
+                events.push(event);
+                localStorage.setItem('periodEvents', JSON.stringify(events));
+            }
+
+            // Edit or delete existing event
+            function editPeriodEvent(event) {
+                let action = prompt("Enter 'edit' to change event name or 'delete' to remove the event:", "edit/delete");
+                if (action === 'edit') {
+                    let newTitle = prompt("Enter new event name:", event.title);
+                    if (newTitle) {
+                        event.setProp('title', newTitle);
+                        updatePeriodEvent(event);
+                        alert('Event updated successfully!');
+                    }
+                } else if (action === 'delete') {
+                    if (confirm("Are you sure you want to delete this event?")) {
+                        event.remove();
+                        deletePeriodEvent(event.id);
+                        alert('Event deleted successfully!');
+                    }
+                }
+            }
+
+            // Update event in localStorage
+            function updatePeriodEvent(updatedEvent) {
+                let events = fetchPeriodEvents();
+                events = events.map(event => event.id === updatedEvent.id ? updatedEvent.toPlainObject() : event);
+                localStorage.setItem('periodEvents', JSON.stringify(events));
+            }
+
+            // Delete event from localStorage
+            function deletePeriodEvent(eventId) {
+                let events = fetchPeriodEvents();
+                events = events.filter(event => event.id !== eventId);
+                localStorage.setItem('periodEvents', JSON.stringify(events));
+            }
+        });
+    </script>
+</body>
+</html>
