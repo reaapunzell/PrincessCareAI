@@ -1,0 +1,117 @@
+<!-- ai-recommendations.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Recommendations | Princess Care</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #ffe0f0;
+        text-align: center;
+        padding: 20px;
+      }
+      .container {
+        max-width: 400px;
+        margin: 0 auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      textarea,
+      button {
+        width: 100%;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>AI Recommendations</h2>
+    <div class="container">
+      <p>Tell us your health concern or question:</p>
+      <h1 class="text-2xl font-bold mb-4">AI Recommendations</h1>
+      <div class="space-y-4">
+        <label class="block">
+          Last Period Date:
+          <input
+            type="date"
+            id="lastPeriod"
+            class="border p-2 w-full rounded"
+          />
+        </label>
+        <label class="block">
+          Symptoms (comma separated):
+          <input
+            type="text"
+            id="symptoms"
+            placeholder="e.g., cramps, bloating"
+            class="border p-2 w-full rounded"
+          />
+        </label>
+        <label class="block">
+          Period Duration (days):
+          <input
+            type="number"
+            id="periodDuration"
+            min="1"
+            max="20"
+            class="border p-2 w-full rounded"
+          />
+        </label>
+        <button
+          onclick="getRecommendations()"
+          class="bg-blue-500 text-white px-4 py-2 rounded"
+        >
+          Get AI Recommendations
+        </button>
+        <div id="output" class="mt-4 text-lg"></div>
+      </div>
+
+
+    <script>
+     async function getRecommendations() {
+    const lastPeriod = document.getElementById('lastPeriod').value;
+    const symptomsRaw = document.getElementById('symptoms').value;
+    const periodDuration = document.getElementById('periodDuration').value;
+    const outputDiv = document.getElementById('output');
+
+    // Basic validation
+    if (!lastPeriod || !symptomsRaw) {
+        outputDiv.innerText = 'Please fill out all required fields.';
+        return;
+    }
+
+    const symptoms = symptomsRaw.split(',').map(s => s.trim()).filter(s => s.length > 0);
+    const durationNum = periodDuration ? Number(periodDuration) : undefined;
+
+    // Construct the JSON body
+    const requestBody = {
+        cycleData: {
+            lastPeriodDate: lastPeriod,
+            symptoms: symptoms,
+            periodDuration: durationNum
+        }
+    };
+
+    outputDiv.innerText = 'Loading...';
+
+    try {
+        const response = await fetch('https://cashzen-api.onrender.com/api/ai/recommend', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(requestBody)
+        });
+
+        const data = await response.json();
+        const aiText = data.choices[0].message.content;
+        outputDiv.innerHTML = `<p>${aiText}</p>`;
+    } catch (error) {
+        console.error(error);
+        outputDiv.innerText = 'Error fetching recommendations.';
+    }
+}
+
+    </script>
+  </body>
+</html>

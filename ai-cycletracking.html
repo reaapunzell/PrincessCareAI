@@ -1,0 +1,104 @@
+<!-- ai-cycle-tracking.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="'stylesheet" href="/src/style.css" />
+    <title>Princess Care</title>
+  </head>
+  <body>
+    <h2>Track My Period</h2>
+    <div class="container">
+      <h1 class="text-2xl font-bold mb-4">Cycle Tracking</h1>
+      <div class="space-y-4">
+        <label class="block">
+          Last Period Date:
+          <input
+            type="date"
+            id="lastPeriodTrack"
+            class="border p-2 w-full rounded"
+          />
+        </label>
+        <label class="block">
+          Symptoms (comma separated):
+          <input
+            type="text"
+            id="symptomsTrack"
+            placeholder="e.g., cramps, mood swings"
+            class="border p-2 w-full rounded"
+          />
+        </label>
+        <label class="block">
+          Period Duration (days):
+          <input
+            type="number"
+            id="periodDurationTrack"
+            min="1"
+            max="20"
+            class="border p-2 w-full rounded"
+          />
+        </label>
+        <button
+          onclick="trackCycle()"
+          class="bg-green-500 text-white px-4 py-2 rounded"
+        >
+          Predict Next Cycle
+        </button>
+        <div id="trackOutput" class="mt-4 text-lg"></div>
+      </div>
+    </div>
+
+    <script>
+      async function trackCycle() {
+        const lastPeriod = document.getElementById("lastPeriodTrack").value;
+        const symptomsRaw = document.getElementById("symptomsTrack").value;
+        const periodDuration = document.getElementById(
+          "periodDurationTrack"
+        ).value;
+        const outputDiv = document.getElementById("trackOutput");
+
+        if (!lastPeriod || !symptomsRaw) {
+          outputDiv.innerText = "Please fill out all required fields.";
+          return;
+        }
+
+        const symptoms = symptomsRaw
+          .split(",")
+          .map((s) => s.trim())
+          .filter((s) => s.length > 0);
+        const durationNum = periodDuration ? Number(periodDuration) : undefined;
+
+        const requestBody = {
+          cycleData: {
+            lastPeriodDate: lastPeriod,
+            symptoms: symptoms,
+            periodDuration: durationNum,
+          },
+        };
+
+        outputDiv.innerText = "Loading...";
+
+        try {
+          const response = await fetch("/api/ai/cycletracking", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(requestBody),
+          });
+
+          const data = await response.json();
+          const prediction = data.choices?.[0]?.message?.content;
+
+          if (prediction) {
+            outputDiv.innerHTML = `<p>Predicted next period start date: <strong>${prediction}</strong></p>`;
+          } else {
+            outputDiv.innerText = "No prediction received.";
+          }
+        } catch (error) {
+          console.error(error);
+          outputDiv.innerText = "Error fetching cycle prediction.";
+        }
+      }
+    </script>
+  </body>
+</html>
